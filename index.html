@@ -14,5 +14,6 @@
   };
 xhttp.open("GET", "https://scratch.mit.edu/site-api/comments/project/" + projid + "/", true);
 xhttp.send()
-  document.getElementById("projectframe").src = "https://scratch.mit.edu/projects/embed/" + projid + "/?autostart=false";
+  document.getElementById("projectframe").src = "//scratch.mit.edu/projects/embed/" + projid + "/?autostart=false";
+  alert(projid)
 </script>
