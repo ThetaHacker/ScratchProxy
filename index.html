@@ -1,6 +1,10 @@
+<iframe id="projectframe" allowtransparency="true" width="485" height="402" src="" frameborder="0" allowfullscreen></iframe>
 <div id="comments"></div>
 
 <script>
+  
+  var projid = location.hash;
+  
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -8,6 +12,7 @@
        document.getElementById("comments").innerHTML = xhttp.responseText;
     }
   };
-xhttp.open("GET", "https://scratch.mit.edu/site-api/comments/project/246435002/", true);
+xhttp.open("GET", "https://scratch.mit.edu/site-api/comments/project/" + projid + "/", true);
 xhttp.send()
+  document.getElementById("projectframe").src = "https://scratch.mit.edu/projects/embed/" + projid + "/?autostart=false";
 </script>
